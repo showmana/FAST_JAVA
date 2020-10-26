@@ -16,6 +16,8 @@ public class StudentTest {
 		studentLee.showStudentSocre();
 		studentKim.showStudentSocre();
 		
+		
+		
 	}
 
 }
