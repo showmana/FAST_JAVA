@@ -15,7 +15,7 @@ public class StudentTest {
 		studentKim.addSubject("¿µ¾î", 80);
 		
 		studentLee.showStudentInfo();
-		System.out.println("====================================");
+		System.out.println("==================================== ");
 		studentKim.showStudentInfo();
 		
 	}
