@@ -1,4 +1,4 @@
-package chapter5;
+package chapter5.mydate;
 
 import java.util.Calendar;
 
@@ -8,15 +8,17 @@ public class MyDate {
 	private int month;
 	private int year;
 	private boolean isValid = true;
-	
+
 	public MyDate(int day, int month, int year) {
-		setYear(year);
-		setMonth(month);
+
 		setDay(day);
+		setMonth(month);
+		setYear(year);
+
 //		this.day = day;
 //		this.month = month;
 //		this.year = year;
-		
+
 	}
 
 	public int getDay() {
@@ -24,43 +26,47 @@ public class MyDate {
 	}
 
 	public void setDay(int day) {
-		switch(month) {
-			case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-				if (day <1 || day >31) {
-					isValid = false;
-				}
-				else {
-					this.day = day;
-				}
-				break;
-			case 4: case 6: case 9: case 11:
-				if (day <1 || day >30) {
-					isValid = false;
-				}
-				else {
-					this.day = day;
-				}
-				break;
-			case 2:
-				if (( ( year % 4 ==0 &&  year % 100 !=0 ) || year % 400 ==0)){  //윤년인 경우
-					if (day <1 || day >29) {
-						isValid = false;
-					} 
-					else {
-						this.day = day;
-					}
-				}
-				else {
-					if (day <1 || day >28) {
-						isValid = false;
-					} 
-					else {
-						this.day = day;
-					}
-				}
-				break;
-			default:
+		switch (month) {
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12:
+			if (day < 1 || day > 31) {
 				isValid = false;
+			} else {
+				this.day = day;
+			}
+			break;
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			if (day < 1 || day > 30) {
+				isValid = false;
+			} else {
+				this.day = day;
+			}
+			break;
+		case 2:
+			if (((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)) { // 윤년
+				if (day < 1 || day > 29) {
+					isValid = false;
+				} else {
+					this.day = day;
+				}
+			} else {
+				if (day < 1 || day > 28) {
+					isValid = false;
+				} else {
+					this.day = day;
+				}
+			}
+			break;
+		default:
+			isValid = false;
 		}
 	}
 
@@ -69,10 +75,9 @@ public class MyDate {
 	}
 
 	public void setMonth(int month) {
-		if( month <1 || month >12) {
+		if (month < 1 || month > 12) {
 			isValid = false;
-		}
-		else {
+		} else {
 			this.month = month;
 		}
 	}
@@ -84,29 +89,26 @@ public class MyDate {
 	public void setYear(int year) {
 		if (year > Calendar.getInstance().get(Calendar.YEAR)) {
 			isValid = false;
-		}
-		else {
+		} else {
 			this.year = year;
 		}
 	}
-	
-	
+
+//	유효값 확인용 isValid 메소드.
+	public String isValid() {
+
+		if (isValid) {
+			return "유효한 날짜입니다.";
+		} else {
+			return "유효하지 않은 날짜입니다.";
+		}
+	}
+
 //	날짜가 생성됐는지 확인해보는 메소드.
 	public String dateInfo() {
 		String dateInfo;
 		dateInfo = getDay() + "/" + getMonth() + "/" + getYear();
 		return dateInfo;
 	}
-	
-//	날짜가 유효한지 확인해보는 메소드.
-	public String isValid() {
-		
-		if(isValid) {
-			return "유효한 날짜입니다.";
-		}
-		else {
-			return "유효하지 않은 날짜입니다.";
-		}
-	}
-	
+
 }
