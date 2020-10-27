@@ -4,8 +4,8 @@ public class CoffeeTest {
 
 	public static void main(String[] args) {
 		
-		Person kim = new Person("Kim", 10000);
-		Person Lee = new Person("Lee", 10000);
+		Person kim = new Person("Kim", 20000);
+		Person Lee = new Person("Lee", 20000);
 		
 		StarCoffee starCoffee = new StarCoffee();
 		BeanCoffee beanCoffee = new BeanCoffee();

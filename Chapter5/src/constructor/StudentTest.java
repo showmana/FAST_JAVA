@@ -18,6 +18,11 @@ public class StudentTest {
 		
 		studentKim.showStudentInfo();
 		
+		System.out.println(studentLee.getStudentID());
+		System.out.println(studentKim.getStudentID());
+		System.out.println(Student.getSerialNum());
+		System.out.println(Student.getSerialNum());
+		
 		//System.out.println(studentLee);
 		//System.out.println(studentKim);
 	}
