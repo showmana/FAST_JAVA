@@ -10,6 +10,8 @@ public class Subject {
 		this.score = score;
 	}
 	
+
+
 	public String getName() {
 		return name;
 	}
@@ -22,6 +24,5 @@ public class Subject {
 	public void setScore(int score) {
 		this.score = score;
 	}
-	
 	
 }
